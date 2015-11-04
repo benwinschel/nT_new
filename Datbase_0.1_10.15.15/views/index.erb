@@ -1,0 +1,10 @@
+<% if User.where(logged_in: false) == nil %>
+  <% @tweets.each do |t| %>
+    <li><%= t.content %></li>
+  <% end %>
+<% else %>
+  <% u = User.where(logged_in: true).first%>
+  <% @tweets_2 = Tweet.all%>
+  <% @tweets2.each do |t| %>
+  <% if t.sender_id == u.id || u.relations.where(user_id :params[:id])>
+    <%end%>
